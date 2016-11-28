@@ -1,0 +1,24 @@
+<form class="event-create" action="/event:create" method="post">
+  <input type="text" name="title" placeholder="What's up?"></input>
+  <textarea name="content" rows="5" cols="40" placeholder="Type something..."></textarea>
+  <button id="b" type=""><i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;Picture</button>
+  <button id="c" type=""><i class="fa fa-video-camera" aria-hidden="true"></i>&nbsp;Video</button>
+  <button id="a" type="submit" class="pub"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;Post</button>
+</form>
+{{#each events}}
+  <div class="event">
+    <div class="title">
+      <img src="/images/avatar.jpg" />
+      <h4>{{this.uploader}}</h4>
+    </div>
+    <hr width="95%" />
+    <div class="content">
+      <p>{{this.content}}</p>
+    </div>
+    <div class="controlls">
+      <h4 id="likes">{{this.likes}} Person likes this</h4>
+      <a id="comment" href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
+      <a id="like" href="/like/{{ this._id}}"><i class="fa fa-heart" aria-hidden="true"></i></a>
+    </div>
+  </div>
+{{/each}}

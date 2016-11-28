@@ -1,0 +1,12 @@
+{{#each friend}}
+    <div class="friends">
+        <div class="friend">
+          <h3>{{user.friends}} {{this.sname}}</h3>
+          <form action="/add:friend" method="post">
+            <input type="text" value={{this.username}}></input>
+            <a id="vp" href=/viewprofile/{{ this._id}}>View Profile</a>
+            <a id="af" href=/sendrequest/{{ this._id}}>Add friend</a>
+          </form>
+        </div>
+    </div>
+  {{/each}}

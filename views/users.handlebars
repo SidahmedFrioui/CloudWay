@@ -1,0 +1,17 @@
+<form class="search" action="/search" method="post">
+  <input id="fn" type="text" name="fname" placeholder="First name"></input>
+  <input id="sn" type="text" name="sname" placeholder="Last name"></input>
+  <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+</form>
+{{#each users}}
+  <div class="friends">
+      <div class="friend">
+        <h3>{{this.fname}} {{this.sname}}</h3>
+        <form action="/add:friend" method="post">
+          <input type="text" value={{this.username}}></input>
+          <a id="vp" href=/viewprofile/{{ this._id}}>View Profile</a>
+          <a id="af" href=/sendrequest/{{ this._id}}>Add friend</a>
+        </form>
+      </div>
+  </div>
+{{/each}}

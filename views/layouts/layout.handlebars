@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" type="image/png" href="/favicon/favicon.png">
+    <link rel="stylesheet" href="/style/css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="vendor/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/behaviors.js"></script>
+    <script src="/js/validation.js"></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      {{#if user}}
+        <a href="/home" class="mi active">CloudWay</a>
+        <a href="/home" class="mi"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
+        <a href="/publications" class="mi"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Publications</a>
+        <a href="/users" class="mi"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;People</a>
+        <a href="/groups" class="mi"><i class="fa fa-circle-o-notch" aria-hidden="true"></i>&nbsp;Groups</a>
+        <a href="/logout" class="lout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        <a href="/settings" class="lout"><i class="fa fa-cog" aria-hidden="true"></i></a>
+      {{else}}
+        <a href="/" class="mi active">CloudWay</a>
+        <a href="/" class="mi">Home</a>
+        <a href="/about" class="mi">About</a>
+        <a href="/users/login" class="lin">LOG IN</a>
+        <a href="/users/register" class="reg">SIGN UP</a>
+      {{/if}}
+    </nav>
+    <div class="contain">
+      {{#if user}}
+        <nav class="sidenav">
+          <div class="top-b">
+            <img src="/images/avatar.jpg" />
+            <h2>{{user.fname}} {{user.sname}}</h2>
+          </div>
+          <nav>
+            <a href="/requests"><i class="fa fa-users" aria-hidden="true"></i></a>
+            <a href="/messages"><i class="fa fa-comments" aria-hidden="true"></i></a>
+            <a href="/notifications"><i class="fa fa-bell" aria-hidden="true"></i></a>
+          </nav>
+          <a href="/myfriends"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;My Friends</a>
+          <a href="/mygroups"><i class="fa fa-circle-o-notch" aria-hidden="true"></i>&nbsp;My Groups</a>
+          <a href="/myphotos"><i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;My Photos</a>
+          <a href="/myevents"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;My Events</a>
+        </nav>
+      {{/if}}
+      {{{body}}}
+    </div>
+    {{#if user}}
+
+    {{else}}
+
+    {{/if}}
+  </body>
+</html>
