@@ -11,7 +11,7 @@ const LocalStrategy = require('passport-local').Strategy
 const mongo = require('mongodb')
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://sidahmed:11092000@jello.modulusmongo.net:27017/ihUd7omu')
+mongoose.connect('mongodb://sidahmed:11092000@ds119588.mlab.com:19588/cloudway')
 
 var db = mongoose.connection
 var User = require('./models/user')
